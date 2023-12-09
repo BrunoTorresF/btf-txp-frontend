@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import UserList from '@/components/UserList.vue';
+import SearchBar from './components/SearchBar.vue';
+
 import tranxportaLogo from '@/assets/traxporta-logo.png';
 </script>
 
@@ -22,6 +25,8 @@ import tranxportaLogo from '@/assets/traxporta-logo.png';
         height="45rem"
         width="38.75rem">
         <div class="text-h6 font-weight-bold text-center">Users</div>
+        <SearchBar />
+        <UserList />
       </v-sheet>
     </v-main>
   </v-app>
