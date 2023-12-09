@@ -4,6 +4,7 @@ import tranxportaLogo from '@/assets/traxporta-logo.png';
 
 <template>
   <v-app>
+    <hr class="top-divider" />
     <v-navigation-drawer rail rail-width="92" color="white">
       <v-list-item
         nav
@@ -30,5 +31,23 @@ import tranxportaLogo from '@/assets/traxporta-logo.png';
 .main-content {
   background-color: #f9f9f9;
   border: 1px solid red;
+}
+
+.top-divider {
+  border: none;
+  z-index: 9999;
+  height: 6px;
+  position: relative;
+
+  &::before {
+    opacity: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, $txp-blue, $txp-yellow);
+  }
 }
 </style>
