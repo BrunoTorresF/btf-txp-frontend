@@ -21,10 +21,10 @@ import tranxportaLogo from '@/assets/traxporta-logo.png';
       <v-sheet
         :elevation="8"
         rounded="xl"
-        class="d-flex flex-column justify-center my-auto"
+        class="d-flex flex-column justify-center my-auto pt-4"
         height="45rem"
         width="38.75rem">
-        <div class="text-h6 font-weight-bold text-center">Users</div>
+        <div class="text-h6 font-weight-bold text-center mb-4">Users</div>
         <SearchBar />
         <UserList />
       </v-sheet>
@@ -35,7 +35,10 @@ import tranxportaLogo from '@/assets/traxporta-logo.png';
 <style scoped lang="scss">
 .main-content {
   background-color: #f9f9f9;
-  border: 1px solid red;
+}
+
+.content-sheet {
+  gap: 1rem;
 }
 
 .top-divider {
