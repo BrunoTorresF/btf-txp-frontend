@@ -18,8 +18,8 @@ getUsers();
     <thead>
       <tr>
         <th />
-        <th class="text-left">Name</th>
-        <th class="text-left">E-mail</th>
+        <th class="text-left text-grey">Name</th>
+        <th class="text-left text-grey">E-mail</th>
       </tr>
     </thead>
     <tbody>
