@@ -13,7 +13,6 @@ const { filter } = storeToRefs(usersStore);
       label="Search"
       name="search"
       type="text"
-      max-width="21.24rem"
       variant="outlined"
       prepend-inner-icon="mdi-magnify"
       class="mx-auto search-input"
