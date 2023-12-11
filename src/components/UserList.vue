@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useUserStore } from '@/stores/users';
 
@@ -6,7 +7,9 @@ const usersStore = useUserStore();
 const { getUsers } = usersStore;
 const { filteredUsers, apiStatus } = storeToRefs(usersStore);
 
-getUsers();
+onMounted(async () => {
+  await getUsers();
+});
 </script>
 
 <template>

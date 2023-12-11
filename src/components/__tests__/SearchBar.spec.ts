@@ -8,7 +8,9 @@ import { usersFake } from './users.fake';
 
 export const vuetify = createVuetify();
 
-const initUserStore = { initialState: { user: { users: usersFake } } };
+const initUserStore = {
+  initialState: { user: { users: usersFake } },
+};
 
 describe('SearchBar', () => {
   it('renders properly', () => {
@@ -17,6 +19,21 @@ describe('SearchBar', () => {
         plugins: [createTestingPinia(initUserStore), vuetify],
       },
     });
-    expect(wrapper.element).toBeTruthy();
+    const input = wrapper.get('input');
+    expect(input).toBeTruthy();
+  });
+
+  it('updates input value', async () => {
+    const wrapper = mount(SearchBar, {
+      global: {
+        plugins: [createTestingPinia(initUserStore), vuetify],
+      },
+    });
+
+    const input = wrapper.get('input');
+
+    await input.setValue('Leanne');
+
+    expect(input.element.value).toEqual('Leanne');
   });
 });

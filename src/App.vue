@@ -37,10 +37,6 @@ import tranxportaLogo from '@/assets/traxporta-logo.png';
   background-color: #f9f9f9;
 }
 
-.content-sheet {
-  gap: 1rem;
-}
-
 .top-divider {
   border: none;
   z-index: 9999;

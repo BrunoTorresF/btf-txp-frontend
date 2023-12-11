@@ -8,7 +8,9 @@ import { usersFake } from './users.fake';
 
 export const vuetify = createVuetify();
 
-const initUserStore = { initialState: { user: { users: usersFake } } };
+const initUserStore = {
+  initialState: { user: { users: usersFake } },
+};
 
 describe('UserList', () => {
   it('renders properly', () => {
@@ -18,5 +20,18 @@ describe('UserList', () => {
       },
     });
     expect(wrapper.element).toBeTruthy();
+  });
+
+  it('renders users', () => {
+    const wrapper = mount(UserList, {
+      global: {
+        plugins: [createTestingPinia(initUserStore), vuetify],
+      },
+    });
+
+    const users = wrapper.findAll('tbody tr');
+
+    expect(users.length).toBe(usersFake.length);
+    expect(users[1].text()).toContain(usersFake[1].name);
   });
 });
